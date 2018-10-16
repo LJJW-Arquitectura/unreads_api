@@ -1,0 +1,12 @@
+version: '2.1'
+services:
+  unreads-api:
+    build: .
+    environment:
+      PORT: '5000'
+      SHOW_URLS: 'true'
+      BOOKLIST_URL: '192.168.0.10'
+      BOOKLIST_PORT: '3001'
+      BOOKLIST_ENTRY: 'api/v1'
+    ports:
+      - '5000:5000'
