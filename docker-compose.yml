@@ -8,5 +8,8 @@ services:
       BOOKLIST_URL: '192.168.0.10'
       BOOKLIST_PORT: '3001'
       BOOKLIST_ENTRY: 'api/v1'
+      BOOKS_MS_URL: '192.168.99.100'
+      BOOKS_MS_PORT: '3002'
+      BOOKS_MS_ENTRY: 'books-ms'
     ports:
       - '5000:5000'
