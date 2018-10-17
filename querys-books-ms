@@ -1,0 +1,120 @@
+#/books Creates a new book
+mutation {
+  createBook(book: {
+    title: "Harry Potter",
+    publisher: "librospublisher",
+    numPages: 21,
+    isbn: "1233891825",
+    plot: "The history of a mage called harry potter",
+    authors: ["JK Rowling"],
+    genres: ["Fantasy", "Magic"]
+  }){
+    id
+    title
+    publisher
+    numPages
+    isbn
+    plot
+    authors
+    genres
+    cover {
+      fileName
+      fileType
+      fileDownloadUri
+      size
+    }
+  }
+}
+
+#/books Returns all books
+query {
+  allBooks {
+    id
+    title
+    publisher
+    numPages
+    isbn
+    plot
+    authors
+    genres
+    cover {
+      fileName
+      fileType
+      fileDownloadUri
+      size
+    }
+  }
+}
+
+#/books/title/{book_title} Returns books with the given title
+query {
+  bookByTitle(title: "Harry Potter") {
+    id
+    title
+    publisher
+    numPages
+    isbn
+    plot
+    authors
+    genres
+    cover {
+      fileName
+      fileType
+      fileDownloadUri
+      size
+    }
+  }
+}
+
+#/books/{book_id} Returns a book with the given id
+query {
+  bookById(book_id: 1) {
+    id
+    title
+    publisher
+    numPages
+    isbn
+    plot
+    authors
+    genres
+    cover {
+      fileName
+      fileType
+      fileDownloadUri
+      size
+    }
+  }
+}
+
+#/books/{book_id} Updates a book with the given id
+mutation {
+  updateBook(book_id: 1, book: {
+    title: "Game of thrones",
+    publisher: "librospublisher2",
+    numPages: 1002,
+    isbn: "823982392",
+    plot: "The winter is coming",
+    authors: ["Martin"],
+    genres: ["Fantasy", "Dragons"]
+  }){
+    id
+    title
+    publisher
+    numPages
+    isbn
+    plot
+    authors
+    genres
+    cover {
+      fileName
+      fileType
+      fileDownloadUri
+      size
+    }
+  }
+}
+
+#/books/{book_id} Deletes a book with the given id
+mutation {
+  deleteBook(book_id: 1)
+}
