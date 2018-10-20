@@ -5,13 +5,13 @@ import { makeExecutableSchema } from 'graphql-tools';
 import { mergeSchemas } from './utilities';
 
 import {
-	usersMutation,
+	usersMutations,
 	usersQueries,
 	usersTypeDef
 } from './users/typeDefs';
 
 import {
-	booklistMutation,
+	booklistMutations,
 	booklistQueries,
 	booklistTypeDef
 } from './booklist/typeDefs';
@@ -22,9 +22,17 @@ import {
 	booksTypeDef
 } from './books/typeDefs';
 
+import {
+	reviewsMutations,
+	reviewsQueries,
+	reviewsTypeDef
+} from './reviews/typeDefs';
+
+
 import booklistResolvers from './booklist/resolvers';
 import booksResolvers from './books/resolvers';
 import usersResolvers from './users/resolvers';
+import reviewsResolvers from './reviews/resolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
@@ -33,16 +41,19 @@ const mergedTypeDefs = mergeSchemas(
 		booklistTypeDef,
 		booksTypeDef,
 		usersTypeDef,
+		reviewsTypeDef,
 	],
 	[
 		booklistQueries,
 		booksQueries,
 		usersQueries,
+		reviewsQueries,
 	],
 	[
-		booklistMutation,
+		booklistMutations,
 		booksMutations,
 		usersMutations,
+		reviewsMutations,
 	]
 );
 
@@ -54,5 +65,6 @@ export default makeExecutableSchema({
 		booklistResolvers,
 		booksResolvers,
 		usersResolvers,
+		reviewsResolvers,
 	)
 });

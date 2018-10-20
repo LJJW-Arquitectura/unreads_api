@@ -29,7 +29,7 @@ export const booklistQueries = `
     booklistByNameUser(user_id: Int! ,name: String!): Booklist!
 `;
 
-export const booklistMutation = `
+export const booklistMutations = `
     createBooklist(booklist: BooklistInput!): Booklist!
     deleteBooklist(user_id: Int!,name: String!): Int
     updateBooklist(user_id: Int!,name: String!, booklist: BooklistInput2!): Int
