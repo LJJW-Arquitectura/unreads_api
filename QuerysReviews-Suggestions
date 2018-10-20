@@ -96,8 +96,7 @@ mutation {
 {
   averageGradeByCode(code: 1) {
     results {
-      avg
+      Avg
     }
   }
 }
-

@@ -40,11 +40,11 @@ type AnswerSuggestion{
 
 export const avgTypeDef = `
 type AVG{
-    avg: Int!
+    Avg: Float!
 }
 
 type AnswerAVG{
-    results: [AVG]
+    results:[AVG]
 }`;
 
 export const reviewsQueries = `
