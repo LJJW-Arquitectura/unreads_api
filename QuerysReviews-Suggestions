@@ -1,0 +1,103 @@
+#REVIEWS
+#Shows all reviews
+{
+  allReviews {
+    results {
+      review_id
+      book_id
+      user_id
+      creationdate
+      review
+      grade
+    }
+  }
+}
+#Show the review with the given code
+{
+  reviewByCode(code: 1) {
+    results {
+      review_id
+      book_id
+      user_id
+      creationdate
+      review
+      grade
+    }
+  }
+}
+
+#Create a review 
+mutation {
+  createReview(review: {book_id: 30, user_id: 5, review: "PESIMO LIBRO", grade: 3}){
+    message
+  } 
+}
+
+#Update a review
+mutation {
+  updateReview(code:2, review: {book_id: 48, user_id: 5, review: "PESIMO LIBRO", grade: 3}){
+    message
+  } 
+}
+
+#Delete a review with the given code
+mutation {
+  deleteReview(code:2){
+    message
+  } 
+}
+#SUGGESTIONS
+#Shows all suggestions
+{
+  allSuggestions {
+    results {
+      suggestion_id
+      book_id1
+      book_id2
+      reason
+    }
+  }
+}
+
+#Show the suggestion with the given code
+{
+  suggestionByCode(code: 1) {
+    results {
+      suggestion_id
+      book_id1
+      book_id2
+      reason
+    }
+  }
+}
+
+#Create a suggestion 
+mutation {
+  createSuggestion(suggestion: {book_id1: 30, book_id2: 15, reason: "ESTAN KULES"}){
+    message
+  } 
+}
+
+#Update a suggestion
+mutation {
+  updateSuggestion(code:2, suggestion: {book_id1: 3, book_id2: 15, reason: "ESTAN KULES"}){
+    message
+  } 
+}
+
+#Delete a suggestion with the given code
+mutation {
+  deleteSuggestion(code:2){
+    message
+  } 
+}
+
+#AVERAGE GRADE
+{
+  averageGradeByCode(code: 1) {
+    results {
+      avg
+    }
+  }
+}
+

@@ -18,8 +18,10 @@ services:
       BOOKS_MS_PORT: '3002'
       BOOKS_MS_ENTRY: 'books-ms'
       
-      REVIEWS_URL: '192.168.99.101'
-      REVIEWS_PORT: '3003'
-      REVIEWS_ENTRY: 'reviews' 
+      REVIEWS_SUGGESTIONS_URL: '192.168.99.101'
+      REVIEWS_SUGGESTIONS_PORT: '3003'
+      REVIEWS_ENTRY: 'reviews'
+      SUGGESTIONS_ENTRY: 'suggestions'
+      AVG_ENTRY: 'get-average'  
     ports:
         - '5000:5000'

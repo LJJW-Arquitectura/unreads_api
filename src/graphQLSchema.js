@@ -25,14 +25,19 @@ import {
 import {
 	reviewsMutations,
 	reviewsQueries,
-	reviewsTypeDef
-} from './reviews/typeDefs';
+	reviewsTypeDef,
+	suggestionsMutations,
+	suggestionsQueries,
+	suggestionsTypeDef,
+	avgQuery,
+	avgTypeDef,
+} from './reviews_suggestions/typeDefs';
 
 
 import booklistResolvers from './booklist/resolvers';
 import booksResolvers from './books/resolvers';
 import usersResolvers from './users/resolvers';
-import reviewsResolvers from './reviews/resolvers';
+import reviews_suggestionsResolvers from './reviews_suggestions/resolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
@@ -42,18 +47,23 @@ const mergedTypeDefs = mergeSchemas(
 		booksTypeDef,
 		usersTypeDef,
 		reviewsTypeDef,
+		suggestionsTypeDef,
+		avgTypeDef,
 	],
 	[
 		booklistQueries,
 		booksQueries,
 		usersQueries,
 		reviewsQueries,
+		suggestionsQueries,
+		avgQuery,
 	],
 	[
 		booklistMutations,
 		booksMutations,
 		usersMutations,
 		reviewsMutations,
+		suggestionsMutations,
 	]
 );
 
@@ -65,6 +75,6 @@ export default makeExecutableSchema({
 		booklistResolvers,
 		booksResolvers,
 		usersResolvers,
-		reviewsResolvers,
+		reviews_suggestionsResolvers,
 	)
 });
