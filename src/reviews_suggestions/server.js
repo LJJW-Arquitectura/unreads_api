@@ -4,3 +4,4 @@ export const entryPointReviews = process.env.REVIEWS_ENTRY
 export const entryPointSuggestions = process.env.SUGGESTIONS_ENTRY
 export const entryPointAVG = 'get-average' 
 export const entryPointBookReviews = 'get-reviews'
+export const entryPointBookSuggestions = 'get-suggestions'

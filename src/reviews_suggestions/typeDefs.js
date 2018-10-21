@@ -69,10 +69,8 @@ export const suggestionsMutations = `
     updateSuggestion(code: Int!, suggestion: SuggestionInput!): AnswerSuggestion!
 `;
 
-export const avgQuery = `
+export const otherQueries = `
     averageGradeByCode(code: Int!): AnswerAVG!
-`;
-
-export const bookReviewsQuery = `
     bookReviewsByCode(code: Int!): AnswerReview!
+    bookSuggestionsByCode(code: Int!): AnswerSuggestion!
 `;
