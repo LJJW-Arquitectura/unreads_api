@@ -115,3 +115,16 @@ mutation {
   }
 }
 
+
+#SUGGESTIONS FOR A BOOK
+{
+  bookSuggestionsByCode(code: 1) {
+    results {
+      suggestion_id
+      book_id1
+      book_id2
+      reason
+    }
+  }
+}
+
