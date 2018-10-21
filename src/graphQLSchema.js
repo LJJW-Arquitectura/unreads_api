@@ -31,6 +31,7 @@ import {
 	suggestionsTypeDef,
 	avgQuery,
 	avgTypeDef,
+	bookReviewsQuery,
 } from './reviews_suggestions/typeDefs';
 
 
@@ -57,6 +58,7 @@ const mergedTypeDefs = mergeSchemas(
 		reviewsQueries,
 		suggestionsQueries,
 		avgQuery,
+		bookReviewsQuery,
 	],
 	[
 		booklistMutations,

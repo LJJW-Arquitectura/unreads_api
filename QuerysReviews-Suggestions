@@ -100,3 +100,18 @@ mutation {
     }
   }
 }
+
+#REVIEWS FOR A BOOK
+{
+  bookReviewsByCode(code: 1) {
+    results {
+      review_id
+      book_id
+      user_id
+      creationdate
+      review
+      grade
+    }
+  }
+}
+

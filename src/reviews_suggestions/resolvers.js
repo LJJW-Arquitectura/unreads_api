@@ -1,9 +1,10 @@
 import { generalRequest, getRequest } from '../utilities';
-import { url, port, entryPointReviews, entryPointSuggestions, entryPointAVG } from './server';
+import { url, port, entryPointReviews, entryPointSuggestions, entryPointAVG, entryPointBookReviews } from './server';
 
 const ReviewsURL = `http://${url}:${port}/${entryPointReviews}`;
 const SuggestionsURL = `http://${url}:${port}/${entryPointSuggestions}`;
 const AVGURL = `http://${url}:${port}/${entryPointAVG}`;
+const BookReviewsURL = `http://${url}:${port}/${entryPointBookReviews}`;
 
 const resolvers = {
 	Query: {
@@ -17,6 +18,8 @@ const resolvers = {
 			getRequest(`${SuggestionsURL}/${code}`, ''),
 		averageGradeByCode: (_, { code }) =>
 			getRequest(`${AVGURL}/${code}`, ''),
+		bookReviewsByCode: (_, { code }) =>
+			getRequest(`${BookReviewsURL}/${code}`, ''),
 	},
 	Mutation: {
 		createReview: (_, { review }) =>

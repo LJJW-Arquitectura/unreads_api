@@ -72,3 +72,7 @@ export const suggestionsMutations = `
 export const avgQuery = `
     averageGradeByCode(code: Int!): AnswerAVG!
 `;
+
+export const bookReviewsQuery = `
+    bookReviewsByCode(code: Int!): AnswerReview!
+`;
