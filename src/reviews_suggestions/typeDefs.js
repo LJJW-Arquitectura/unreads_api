@@ -23,11 +23,13 @@ type AnswerReview{
 export const suggestionsTypeDef = `
 type Suggestion {
     suggestion_id: Int
+    user_id: Int
     book_id1: Int
     book_id2: Int
     reason: String
 }
 input SuggestionInput {
+    user_id: Int!
     book_id1: Int!
     book_id2: Int!
     reason: String!
@@ -73,4 +75,6 @@ export const otherQueries = `
     averageGradeByCode(code: Int!): AnswerAVG!
     bookReviewsByCode(code: Int!): AnswerReview!
     bookSuggestionsByCode(code: Int!): AnswerSuggestion!
+    userReviewsByCode(code: Int!): AnswerReview!
+    userSuggestionsByCode(code: Int!): AnswerSuggestion!
 `;

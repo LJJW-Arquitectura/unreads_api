@@ -1,11 +1,13 @@
 import { generalRequest, getRequest } from '../utilities';
-import { url, port, entryPointReviews, entryPointSuggestions, entryPointAVG, entryPointBookReviews, entryPointBookSuggestions } from './server';
+import { url, port, entryPointReviews, entryPointSuggestions, entryPointAVG, entryPointBookReviews, entryPointBookSuggestions, entryPointUserReviews, entryPointUserSuggestions } from './server';
 
 const ReviewsURL = `http://${url}:${port}/${entryPointReviews}`;
 const SuggestionsURL = `http://${url}:${port}/${entryPointSuggestions}`;
 const AVGURL = `http://${url}:${port}/${entryPointAVG}`;
 const BookReviewsURL = `http://${url}:${port}/${entryPointBookReviews}`;
 const BookSuggestionsURL = `http://${url}:${port}/${entryPointBookSuggestions}`;
+const UserReviewsURL = `http://${url}:${port}/${entryPointUserReviews}`;
+const UserSuggestionsURL = `http://${url}:${port}/${entryPointUserSuggestions}`;
 
 const resolvers = {
 	Query: {
@@ -23,6 +25,10 @@ const resolvers = {
 			getRequest(`${BookReviewsURL}/${code}`, ''),
 		bookSuggestionsByCode: (_, { code }) =>
 			getRequest(`${BookSuggestionsURL}/${code}`, ''),
+		userReviewsByCode: (_, { code }) =>
+			getRequest(`${UserReviewsURL}/${code}`, ''),
+		userSuggestionsByCode: (_, { code }) =>
+			getRequest(`${UserSuggestionsURL}/${code}`, ''),
 	},
 	Mutation: {
 		createReview: (_, { review }) =>

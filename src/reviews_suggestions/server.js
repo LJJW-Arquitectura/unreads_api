@@ -5,3 +5,5 @@ export const entryPointSuggestions = process.env.SUGGESTIONS_ENTRY
 export const entryPointAVG = 'get-average' 
 export const entryPointBookReviews = 'get-reviews'
 export const entryPointBookSuggestions = 'get-suggestions'
+export const entryPointUserReviews = 'get-reviewsUser'
+export const entryPointUserSuggestions = 'get-suggestionsUser'
