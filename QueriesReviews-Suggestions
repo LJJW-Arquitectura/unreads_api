@@ -5,7 +5,9 @@
     results {
       review_id
       book_id
+      booktitle
       user_id
+      username
       creationdate
       review
       grade
@@ -18,7 +20,9 @@
     results {
       review_id
       book_id
+      booktitle
       user_id
+      username
       creationdate
       review
       grade
@@ -28,14 +32,14 @@
 
 #Create a review 
 mutation {
-  createReview(review: {book_id: 30, user_id: 5, review: "PESIMO LIBRO", grade: 3}){
+  createReview(review: {book_id: 30, booktitle: "libro30", user_id: 5, username: "usuario5", review: "PESIMO LIBRO", grade: 3}){
     message
   } 
 }
 
 #Update a review
 mutation {
-  updateReview(code:2, review: {book_id: 48, user_id: 5, review: "PESIMO LIBRO", grade: 3}){
+  updateReview(code:2, review: {book_id: 48, booktitle: "libro48", user_id: 5, username: "usuario5", review: "PESIMO LIBRO", grade: 1}){
     message
   } 
 }
@@ -53,8 +57,11 @@ mutation {
     results {
       suggestion_id
       user_id
+      username
       book_id1
+      booktitle1
       book_id2
+      booktitle2
       reason
     }
   }
@@ -66,8 +73,11 @@ mutation {
     results {
       suggestion_id
       user_id
+      username
       book_id1
+      booktitle1
       book_id2
+      booktitle2
       reason
     }
   }
@@ -75,14 +85,14 @@ mutation {
 
 #Create a suggestion 
 mutation {
-  createSuggestion(suggestion: {user_id: 1, book_id1: 30, book_id2: 15, reason: "ESTAN KULES"}){
+  createSuggestion(suggestion: {user_id: 1, username: "user1", book_id1: 30, booktitle: "libro30", book_id2: 15, booktitle2: "libro15", reason: "ESTAN KULES"}){
     message
   } 
 }
 
 #Update a suggestion
 mutation {
-  updateSuggestion(code:2, suggestion: {user_id: 1, book_id1: 3, book_id2: 15, reason: "ESTAN KULES"}){
+  updateSuggestion(code:2, suggestion: {user_id: 1, username: "user1", book_id1: 3, booktitle: "libro3", book_id2: 15, booktitle2: "libro15", reason: "ESTAN KULES"}){
     message
   } 
 }
@@ -109,6 +119,7 @@ mutation {
     results {
       review_id
       book_id
+      booktitle
       user_id
       creationdate
       review
@@ -137,6 +148,7 @@ mutation {
     results {
       review_id
       book_id
+      booktitle
       user_id
       creationdate
       review
