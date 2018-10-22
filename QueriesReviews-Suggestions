@@ -52,6 +52,7 @@ mutation {
   allSuggestions {
     results {
       suggestion_id
+      user_id
       book_id1
       book_id2
       reason
@@ -64,6 +65,7 @@ mutation {
   suggestionByCode(code: 1) {
     results {
       suggestion_id
+      user_id
       book_id1
       book_id2
       reason
@@ -73,14 +75,14 @@ mutation {
 
 #Create a suggestion 
 mutation {
-  createSuggestion(suggestion: {book_id1: 30, book_id2: 15, reason: "ESTAN KULES"}){
+  createSuggestion(suggestion: {user_id: 1, book_id1: 30, book_id2: 15, reason: "ESTAN KULES"}){
     message
   } 
 }
 
 #Update a suggestion
 mutation {
-  updateSuggestion(code:2, suggestion: {book_id1: 3, book_id2: 15, reason: "ESTAN KULES"}){
+  updateSuggestion(code:2, suggestion: {user_id: 1, book_id1: 3, book_id2: 15, reason: "ESTAN KULES"}){
     message
   } 
 }
@@ -121,6 +123,7 @@ mutation {
   bookSuggestionsByCode(code: 1) {
     results {
       suggestion_id
+      user_id
       book_id1
       book_id2
       reason
@@ -128,3 +131,30 @@ mutation {
   }
 }
 
+#REVIEWS FOR A USER
+{
+  userReviewsByCode(code: 1) {
+    results {
+      review_id
+      book_id
+      user_id
+      creationdate
+      review
+      grade
+    }
+  }
+}
+
+
+#SUGGESTIONS FOR A USER
+{
+  userSuggestionsByCode(code: 1) {
+    results {
+      suggestion_id
+      user_id
+      book_id1
+      book_id2
+      reason
+    }
+  }
+}
