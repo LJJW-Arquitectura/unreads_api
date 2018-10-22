@@ -2,6 +2,7 @@ export const reviewsTypeDef = `
 type Review {
     review_id: Int
     book_id: Int
+    booktitle: String
     user_id: Int
     username: String
     creationdate: String
@@ -11,6 +12,7 @@ type Review {
 
 input ReviewInput {
     book_id: Int!
+    booktitle: String!
     user_id: Int!
     username: String!
     review: String!
