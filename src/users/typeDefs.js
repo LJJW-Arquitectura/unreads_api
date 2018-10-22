@@ -14,7 +14,7 @@ input UserInput {
 export const usersQueries = `
     allUsers: [User]!
     userById(user_id: Int!): User!
-    userByUsernameAndPassword(username: String!, password: String!): User!
+    userByUsernameAndPassword(username: String!, password: String!): User
 `;
 
 export const usersMutations = `
