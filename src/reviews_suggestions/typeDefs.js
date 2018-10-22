@@ -3,6 +3,7 @@ type Review {
     review_id: Int
     book_id: Int
     user_id: Int
+    username: String
     creationdate: String
     review: String
     grade: Int
@@ -11,6 +12,7 @@ type Review {
 input ReviewInput {
     book_id: Int!
     user_id: Int!
+    username: String!
     review: String!
     grade: Int!
 }
@@ -24,14 +26,20 @@ export const suggestionsTypeDef = `
 type Suggestion {
     suggestion_id: Int
     user_id: Int
+    username: String
     book_id1: Int
+    booktitle1: String
     book_id2: Int
+    booktitle2: String
     reason: String
 }
 input SuggestionInput {
     user_id: Int!
+    username: String!
     book_id1: Int!
+    booktitle1: String!
     book_id2: Int!
+    booktitle2: String!
     reason: String!
 }
 
