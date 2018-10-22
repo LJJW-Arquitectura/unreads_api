@@ -85,14 +85,14 @@ mutation {
 
 #Create a suggestion 
 mutation {
-  createSuggestion(suggestion: {user_id: 1, username: "user1", book_id1: 30, booktitle: "libro30", book_id2: 15, booktitle2: "libro15", reason: "ESTAN KULES"}){
+  createSuggestion(suggestion: {user_id: 1, username: "user1", book_id1: 30, booktitle1: "libro30", book_id2: 15, booktitle2: "libro15", reason: "ESTAN KULES"}){
     message
   } 
 }
 
 #Update a suggestion
 mutation {
-  updateSuggestion(code:2, suggestion: {user_id: 1, username: "user1", book_id1: 3, booktitle: "libro3", book_id2: 15, booktitle2: "libro15", reason: "ESTAN KULES"}){
+  updateSuggestion(code:2, suggestion: {user_id: 1, username: "user1", book_id1: 3, booktitle1: "libro3", book_id2: 15, booktitle2: "libro15", reason: "ESTAN KULES"}){
     message
   } 
 }
