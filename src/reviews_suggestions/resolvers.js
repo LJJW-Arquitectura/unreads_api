@@ -1,4 +1,4 @@
-import { generalRequest, getRequest } from '../utilities';
+import { generalRequest, getRequest,generalRequestWA } from '../utilities';
 import { url, port, entryPointReviews, entryPointSuggestions, entryPointAVG, entryPointBookReviews, entryPointBookSuggestions, entryPointUserReviews, entryPointUserSuggestions } from './server';
 
 const ReviewsURL = `http://${url}:${port}/${entryPointReviews}`;
@@ -25,25 +25,25 @@ const resolvers = {
 			getRequest(`${BookReviewsURL}/${code}`, ''),
 		bookSuggestionsByCode: (_, { code }) =>
 			getRequest(`${BookSuggestionsURL}/${code}`, ''),
-		userReviewsByCode: (_, { code }) =>
-			getRequest(`${UserReviewsURL}/${code}`, ''),
-		userSuggestionsByCode: (_, { code }) =>
-			getRequest(`${UserSuggestionsURL}/${code}`, ''),
+		userReviewsByCode: (_, { code },context) =>
+			generalRequestWA(`${UserReviewsURL}/${code}` , 'GET',{user_id: code},context.token),
+		userSuggestionsByCode: (_, { code },context) =>
+			generalRequestWA(`${UserSuggestionsURL}/${code}`, 'GET',{user_id: code},context.token),
 	},
 	Mutation: {
-		createReview: (_, { review }) =>
-			generalRequest(`${ReviewsURL}`, 'POST', review),
-		updateReview: (_, { code, review }) =>
-			generalRequest(`${ReviewsURL}/${code}`, 'PUT', review),
-		deleteReview: (_, { code }) =>
-			generalRequest(`${ReviewsURL}/${code}`, 'DELETE'),
+		createReview: (_, { review },context) =>
+			generalRequest(`${ReviewsURL}`, 'POST', review ,context.token),
+		updateReview: (_, { code, review },context) =>
+			generalRequest(`${ReviewsURL}/${code}`, 'PUT', review,context.token),
+		deleteReview: (_, { code },context) =>
+			generalRequest(`${ReviewsURL}/${code}`, 'DELETE',context.token),
 
-		createSuggestion: (_, { suggestion }) =>
-			generalRequest(`${SuggestionsURL}`, 'POST', suggestion),
-		updateSuggestion: (_, { code, suggestion }) =>
-			generalRequest(`${SuggestionsURL}/${code}`, 'PUT', suggestion),
-		deleteSuggestion: (_, { code }) =>
-			generalRequest(`${SuggestionsURL}/${code}`, 'DELETE')
+		createSuggestion: (_, { suggestion },context) =>
+			generalRequest(`${SuggestionsURL}`, 'POST', suggestion,context.token),
+		updateSuggestion: (_, { code, suggestion },context) =>
+			generalRequest(`${SuggestionsURL}/${code}`, 'PUT', suggestion,context.token),
+		deleteSuggestion: (_, { code },context) =>
+			generalRequest(`${SuggestionsURL}/${code}`, 'DELETE',context.token)
 	}
 };
 

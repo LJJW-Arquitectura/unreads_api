@@ -10,7 +10,7 @@ const resolvers = {
 		userById: (_, { user_id }) =>
 				generalRequest(`${URL}/${user_id}`, 'GET'),
 		userByUsernameAndPassword: (_, { username, password }) =>
-				generalRequest(`${URL}/${username}/${password}`, 'GET'),
+				generalRequest(`${URL}/login`, 'POST', {username: username, password: password}),
 	},
 	Mutation: {
 		createUser: (_, { user }) =>
