@@ -41,6 +41,7 @@ export async function generalRequestWA(url, method, body, token , fullResponse) 
 	if (aux == undefined){
 		aux = body.id
 	}
+	aux = aux + ""
 
 	const parametersAuth = {
 		method: 'POST',
