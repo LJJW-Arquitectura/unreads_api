@@ -11,7 +11,7 @@ import { formatError } from 'graphql';
  * @return {Promise.<*>} - promise with the error or the response object
  */
 
- const URLTOKEN = `http://${process.env.USERS_MS_URL}:${process.env.USERS_MS_PORT}/${process.env.USERS_MS_ENTRY}/auth`;
+ const URLTOKEN = `http://${process.env.USERS_MS_URL}/${process.env.USERS_MS_ENTRY}/auth`;
  const met = "POST"
 
 
