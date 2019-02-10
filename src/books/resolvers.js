@@ -1,7 +1,7 @@
 import { generalRequest, getRequest,generalRequestWA } from '../utilities';
 import { url, port, entryPoint } from './server';
 
-const URL = `http://${url}:${port}/books`;
+const URL = `http://${url}:${port}/${entryPoint}/books`;
 
 const resolvers = {
 	Query: {
