@@ -1,13 +1,13 @@
 import { generalRequest, getRequest,generalRequestWA } from '../utilities';
 import { url, port, entryPointReviews, entryPointSuggestions, entryPointAVG, entryPointBookReviews, entryPointBookSuggestions, entryPointUserReviews, entryPointUserSuggestions } from './server';
 
-const ReviewsURL = `http://${url}/${entryPointReviews}`;
-const SuggestionsURL = `http://${url}/${entryPointSuggestions}`;
-const AVGURL = `http://${url}/${entryPointAVG}`;
-const BookReviewsURL = `http://${url}/${entryPointBookReviews}`;
-const BookSuggestionsURL = `http://${url}/${entryPointBookSuggestions}`;
-const UserReviewsURL = `http://${url}/${entryPointUserReviews}`;
-const UserSuggestionsURL = `http://${url}/${entryPointUserSuggestions}`;
+const ReviewsURL = `http://${url}:${port}/${entryPointReviews}`;
+const SuggestionsURL = `http://${url}:${port}/${entryPointSuggestions}`;
+const AVGURL = `http://${url}:${port}/${entryPointAVG}`;
+const BookReviewsURL = `http://${url}:${port}/${entryPointBookReviews}`;
+const BookSuggestionsURL = `http://${url}:${port}/${entryPointBookSuggestions}`;
+const UserReviewsURL = `http://${url}:${port}/${entryPointUserReviews}`;
+const UserSuggestionsURL = `http://${url}:${port}/${entryPointUserSuggestions}`;
 
 const resolvers = {
 	Query: {
