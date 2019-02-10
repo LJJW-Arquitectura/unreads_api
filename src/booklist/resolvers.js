@@ -6,7 +6,7 @@ const URL = `http://${url}/${entryPoint}`;
 const resolvers = {
 	Query: {
 		allBooklist: (_) =>
-			generalRequest(`${URL}/booklist`, 'GET'),
+			generalRequest(`${URL}/booklist/`, 'GET'),
 		readbooks: (_, { user_id },context) =>
 			generalRequestWA(`${URL}/readbook/${user_id}`, 'GET',{user_id: user_id},context.token),			
 		booklistsByUser: (_, { user_id },context) =>
